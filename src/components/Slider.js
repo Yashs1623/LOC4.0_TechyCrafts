@@ -9,9 +9,9 @@ function Slider(){
     return(
         <div className="App">
         <AliceCarousel autoPlay autoPlayInterval="3000">
-      <img src={image1} className="sliderimg"/>
-      <img src={image2} className="sliderimg"/>
-      <img src={image3} className="sliderimg"/>
+      <img src={image1} alt="image1" className="sliderimg"/>
+      <img src={image2} alt="image2"className="sliderimg"/>
+      <img src={image3} alt="image3" className="sliderimg"/>
       
 </AliceCarousel>
         </div>
