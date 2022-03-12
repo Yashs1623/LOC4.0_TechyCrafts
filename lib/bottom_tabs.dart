@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'constants/constants.dart';
 import 'Screens/events_screen.dart';
+import 'Screens/chatbot.dart';
 
 class BottomTabs extends StatefulWidget {
   const BottomTabs({Key? key}) : super(key: key);
@@ -65,9 +66,7 @@ class _BottomTabsState extends State<BottomTabs> {
             Container(
               color: Colors.red,
             ),
-            Container(
-              color: Colors.yellow,
-            )
+            ChatBot(),
           ],
         ),
       ),
