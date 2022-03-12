@@ -23,6 +23,8 @@ function App() {
                 <Route exact path='/login' element={< Login />}></Route> 
                 <Route exact path='/signup' element={< Signup />}></Route> 
                 <Route exact path='/ngo' element={<NGO/> }></Route> 
+                <Route exact path='/fundraiser' element={<Login/> }></Route> 
+                <Route exact path='/event' element={<Signup/> }></Route> 
             </Routes>
         </div>
         </Router>

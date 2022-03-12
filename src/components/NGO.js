@@ -1,7 +1,17 @@
 import React from 'react'
 import ngoimg from '../images/ngoimg.jpg'
+import { useNavigate } from 'react-router-dom';
 
 function NGO() {
+    let navigate = useNavigate();
+    const renderFund=()=>{
+        navigate(`/fundraiser`)
+        
+    }
+    const renderEvent=()=>{
+        navigate(`/event`)
+    }
+
   return (
     <div className='container row justify-content-center'>
       <div className="container col-xxl-8 px-4 py-5">
@@ -23,7 +33,7 @@ function NGO() {
         
           <h2  className="mt-3 d-flex justify-content-center">Add borders</h2>
           <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-          <button className="btn btn-outline-secondary container" type="button">Example button</button>
+          <button className="btn btn-outline-secondary container" type="button" onClick={renderFund}>Example button</button>
         </div>
       </div>
       <div className="col-md-5">
@@ -32,7 +42,7 @@ function NGO() {
         
           <h2 className="mt-3 d-flex justify-content-center">Add borders</h2>
           <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-          <button className="btn btn-outline-secondary container " type="button">Example button</button>
+          <button className="btn btn-outline-secondary container " type="button" onClick={renderEvent} >Example button</button>
         </div>
       </div>      
 
