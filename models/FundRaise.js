@@ -19,7 +19,7 @@ const fundRaiseSchema = new mongoose.Schema({
         required: [true, "Please enter a desciption"],
     },
     date:{
-        type:Date,
+        type:String,
         required:false,
     }
 });
