@@ -99,9 +99,9 @@ module.exports.getProfile = async(req, res) => {
     // res.send("Login get request");
 }
 module.exports.signup_post = async (req, res) => {
-    const { email, password } = req.body;
+    const {name, email, contact, password} = req.body;
     try {
-        const user = await User.create({ email, password });
+        const user = await User.create({ name, email, contact, password });
         // console.log(user);
         const token = createToken(user._id);
         res.status(201).json({ token });
