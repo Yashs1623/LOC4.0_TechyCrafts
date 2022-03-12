@@ -6,6 +6,7 @@ import 'package:loc/roundbutton.dart';
 import 'dart:convert';
 import 'package:loc/api_models/login_model.dart';
 import 'package:loc/bottom_tabs.dart';
+import 'NGO_home.dart';
 
 class RegisterScreenNGO extends StatefulWidget {
   RegisterScreenNGO({required this.isNGO, required this.isUser});
@@ -137,25 +138,23 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               },
             ),
             RoundButton(
-              text: 'Register',
-              color: Colors.lightBlueAccent,
-              onPressed: () async {
-                var email = _emailController.text;
-                var password = _passwordController.text;
-                var token = await attemptSignUp(email, password);
-                if (token != null) {
-                  storage.write(key: "token", value: token.token);
-                  String? tokens = await storage.read(key: "token");
-                  print(tokens);
+                text: 'Register',
+                color: Colors.lightBlueAccent,
+                onPressed: () async {
+                  // var email = _emailController.text;
+                  // var password = _passwordController.text;
+                  // var token = await attemptSignUp(email, password);
+                  // if (token != null) {}
+                  //   storage.write(key: "token", value: token.token);
+                  //   String? tokens = await storage.read(key: "token");
+                  //   print(tokens);
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomTabs(),
+                      builder: (context) => NGO_home(),
                     ),
                   );
-                }
-              },
-            ),
+                }),
           ],
         ),
       ),
