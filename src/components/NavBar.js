@@ -35,7 +35,7 @@ function NavBar(props) {
           className="d-inline-block align-text-top mx-4"
         />
         <Link className="navbar-brand" to="/">
-          Apni-Diary
+          Little Hopes
         </Link>
         <button
           className="navbar-toggler"

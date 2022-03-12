@@ -39,7 +39,7 @@ function Signup() {
 
   return (
     <div className="">
-      <h1 className="d-flex justify-content-center mb-3 "style={{fontFamily:"Bebas Neue",color:"#358297"}} >Sign-Up to Apni-Diary</h1>
+      <h1 className="d-flex justify-content-center mb-3 "style={{fontFamily:"Bebas Neue",color:"#358297"}} >Sign-Up to Little Hopes</h1>
       <div className="d-sm-block d-md-flex justify-content-between"> 
       <div className="container">
         <div className=" d-flex justify-content-center ">

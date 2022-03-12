@@ -13,6 +13,7 @@ import NGO from './components/NGO';
 import Event from './components/Event';
 import Fund from './components/fundraiser';
 import Footer from './components/Footer';
+import Landing from './components/Landing';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <NavBar navType='dark' bgColor="#0950D5"  textColor="white" />
         <div className="container my-3">
             <Routes>
-                <Route exact path='/' element={< Login />}></Route> 
+                <Route exact path='/' element={< Landing />}></Route> 
                 <Route exact path='/login' element={< Login />}></Route> 
                 <Route exact path='/signup' element={< Signup />}></Route> 
                 <Route exact path='/ngo' element={<NGO/> }></Route> 
