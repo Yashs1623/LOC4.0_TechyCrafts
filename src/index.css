@@ -107,3 +107,6 @@ i{
 .card-body {
   padding: 1.2em;
 }
+.card button{
+  margin-left: 100px;
+}

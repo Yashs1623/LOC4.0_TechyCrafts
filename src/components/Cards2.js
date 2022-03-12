@@ -1,7 +1,7 @@
 import React from 'react'
 import image3 from "../images/ngo_img1.jpg"
 
-const Cards = (props) => {
+const Cards2 = (props) => {
   return (
     
       <div className="card">
@@ -10,12 +10,13 @@ const Cards = (props) => {
             <h2>{props.title}</h2>
             <p>{props.desc}</p>
             <p>place:{props.place}</p>
-            <p>{props.date}</p>
-            <button  class="btn btn-primary" type="submit">Volunteer Now</button>
+            <p>{props.price}</p>
+            <p>{props.org}</p>
+            <button  class="btn btn-primary" type="submit">Donate Now</button>
           </div>
         </div>
    
   )
 }
 
-export default Cards
+export default Cards2

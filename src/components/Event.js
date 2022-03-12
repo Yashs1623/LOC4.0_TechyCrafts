@@ -83,7 +83,7 @@ return (
           <label htmlFor="reg">Date</label>
         </div>
         <div className="d-flex justify-content-center">
-        <button class="btn btn-primary" type="submit">Start the Event</button>
+        <button className="btn btn-primary" type="submit">Start the Event</button>
 
         </div>
       </form>
