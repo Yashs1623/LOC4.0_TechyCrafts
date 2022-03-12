@@ -77,10 +77,12 @@ module.exports.updateUser = (req, res) => {
 
 module.exports.getProfile = async(req, res) => {
     try {
-        if(auth.user){
-            const user = auth.user;
-            res.status(200).json(user);
-        }
+      //main
+        // if(auth.user){
+        //     const user = auth.user;
+        //     res.status(200).json(user);
+        // }
+        res.send("yash");
         // const userId =  auth.user_id;
         // console.log(userId);
         // const user = await User.findOne({_id:userId});
