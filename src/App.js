@@ -18,6 +18,8 @@ import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
 import Landing from './components/Landing';
 import Signup2 from './components/Signup2';
+import Colab from './components/Colab';
+
 function App() {
   return (
    
@@ -37,6 +39,7 @@ function App() {
                 <Route exact path='/event' element={<Event/>}></Route> 
                 <Route exact path='/volunteer' element={<Volunteer/>}></Route>
                 <Route exact path='/donate' element={<Donate/>}></Route>  
+                <Route exact path='/colab' element={<Colab/>}></Route>  
             </Routes>
         </div>
         <Footer/>

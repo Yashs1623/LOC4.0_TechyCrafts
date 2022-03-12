@@ -2,7 +2,7 @@ import React , { useState} from 'react';
 import AuthContext from './AuthContext';
 
 function AuthState(props) {
-    const [auth, setAuth] = useState(false);
+    const [auth, setAuth] = useState(null);
   return (
 
     <AuthContext.Provider value={ {auth ,setAuth} } >

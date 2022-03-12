@@ -40,8 +40,8 @@ function Signup2() {
     const response = await fetch("https://locbackend.herokuapp.com/signup", requestOptions)
       .then((response) => response.text())
       .then((result) => {
-        setAuth(result.token) 
-        console.log(auth);
+        localStorage.setItem("token", result.token);
+        navigate(`/ngo`);
       })
       .catch((error) => console.log("error", error));
     //save auth token and redirect
@@ -52,11 +52,6 @@ function Signup2() {
     // console.log(json.token);
 
   };
-  useEffect(()=>{
-      if(auth){
-        navigate("/ngo")
-      }
-  },[])
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
