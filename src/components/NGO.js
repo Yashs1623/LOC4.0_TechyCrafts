@@ -31,8 +31,8 @@ function NGO() {
         <div className="h-100 p-5  border rounded-3">
         <div className="d-flex justify-content-center"> <i className="fa-solid fa-handshake-angle fa-2xl"></i></div>
         
-          <h2  className="mt-3 d-flex justify-content-center">Add borders</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <h2  className="mt-3 d-flex justify-content-center">Start a Fund Raise</h2>
+          <p>Support an NGO by starting a free fundraiser on GiveIndia. Make maximum impact</p>
           <button className="btn btn-outline-secondary container" type="button" onClick={renderFund}>Example button</button>
         </div>
       </div>
@@ -40,8 +40,8 @@ function NGO() {
         <div className="h-100 p-5 bg border rounded-3">
         <div className="d-flex justify-content-center"><i className="fa-solid fa-calendar-days fa-2xl"></i></div>
         
-          <h2 className="mt-3 d-flex justify-content-center">Add borders</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <h2 className="mt-3 d-flex justify-content-center">Create an Event</h2>
+          <p>!!!!!create an event for your NGO and make maximum people join you as a volunteer!!!!!!</p>
           <button className="btn btn-outline-secondary container " type="button" onClick={renderEvent} >Example button</button>
         </div>
       </div>      

@@ -9,7 +9,7 @@ return (
       <div className="d-sm-block d-md-flex justify-content-between"> 
       <div className="container">
         <div className=" d-flex justify-content-center ">
-        <img src={imglink} className="fund-image"/>
+        <img src={imglink} className="fund-image" alt="fund"/>
               
         </div>
       </div>

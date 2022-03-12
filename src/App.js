@@ -10,7 +10,8 @@ import Signup from './components/Signup';
 import NavBar from './components/NavBar';
 import AuthState from './context/AuthCheck/AuthState';
 import NGO from './components/NGO';
-
+import Event from './components/Event';
+import Fund from './components/fundraiser';
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
                 <Route exact path='/login' element={< Login />}></Route> 
                 <Route exact path='/signup' element={< Signup />}></Route> 
                 <Route exact path='/ngo' element={<NGO/> }></Route> 
-                <Route exact path='/fundraiser' element={<Login/> }></Route> 
-                <Route exact path='/event' element={<Signup/> }></Route> 
+                <Route exact path='/fundraiser' element={<Fund/> }></Route> 
+                <Route exact path='/event' element={<Event/> }></Route> 
             </Routes>
         </div>
         </Router>

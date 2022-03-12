@@ -9,7 +9,7 @@ return (
       <div className="d-sm-block d-md-flex justify-content-between"> 
       <div className="container">
         <div className=" d-flex justify-content-center ">
-        <img src={imglink} className="event-image1" style={{height:"50%"}}/>
+        <img src={imglink} className="event-image1" style={{height:"50%"}} alt={"fund"}/>
               
         </div>
       </div>
