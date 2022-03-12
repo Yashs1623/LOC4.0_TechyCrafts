@@ -17,7 +17,10 @@ import User from "./components/User";
 import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
 import Landing from './components/Landing';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46b829bb148674a24034a405ec8ca4d3e5263caa
 function App() {
   return (
    
@@ -27,7 +30,7 @@ function App() {
         <NavBar navType='dark' bgColor="#0950D5"  textColor="white" />
         <div className="container my-3">
             <Routes>
-                <Route exact path='/' element={< Landing />}></Route> 
+                <Route exact path='/' element={<Landing/>}></Route> 
                 <Route exact path='/login' element={< Login />}></Route> 
                 <Route exact path='/signup' element={< Signup />}></Route> 
                 <Route exact path='/ngo' element={<NGO/>}></Route> 
@@ -36,7 +39,6 @@ function App() {
                 <Route exact path='/event' element={<Event/>}></Route> 
                 <Route exact path='/volunteer' element={<Volunteer/>}></Route>
                 <Route exact path='/donate' element={<Donate/>}></Route>  
-
             </Routes>
         </div>
         <Footer/>

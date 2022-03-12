@@ -1,10 +1,9 @@
 import React from 'react'
+import Cards from './Cards'
 
 const Donate = () => {
   return (
-    <div>
-      <h1>this is Donate</h1>
-    </div>
+    <Cards/>
   )
 }
 
