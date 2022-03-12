@@ -17,6 +17,10 @@ import User from "./components/User";
 import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
 import Landing from './components/Landing';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 46b829bb148674a24034a405ec8ca4d3e5263caa
 function App() {
   return (
    
