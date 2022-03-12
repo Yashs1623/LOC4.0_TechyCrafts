@@ -1,11 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools = "http://schemas.android.com/tools"
     package="com.example.loc">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         tools:replace = "android:label"
         android:label="loc"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAO5wJYCk25xG-wJmNUA99ysLO-VBXg2Z8"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

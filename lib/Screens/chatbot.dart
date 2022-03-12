@@ -11,10 +11,10 @@ class ChatBot extends StatefulWidget {
 }
 
 class _ChatBotState extends State<ChatBot> {
-  void buildConversation() {
+  void buildConversation() async {
     dynamic conversationObject = {'appId': kappID};
 
-    KommunicateFlutterPlugin.buildConversation(conversationObject)
+    await KommunicateFlutterPlugin.buildConversation(conversationObject)
         .then((result) {
       print("Conversation builder success : " + result.toString());
     }).catchError((error) {

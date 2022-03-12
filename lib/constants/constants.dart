@@ -20,3 +20,4 @@ const InputDecoration kTextFieldDecoration = InputDecoration(
 
 Color kthemecolor = Color(0xff0950D5);
 String kappID = '1c1a6fd899067751d2705a91dc035f561';
+String kgoogleapikey = 'AIzaSyAO5wJYCk25xG-wJmNUA99ysLO-VBXg2Z8';

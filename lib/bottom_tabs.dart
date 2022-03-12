@@ -3,6 +3,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'constants/constants.dart';
 import 'Screens/events_screen.dart';
 import 'Screens/chatbot.dart';
+import 'Screens/map_screen.dart';
 
 class BottomTabs extends StatefulWidget {
   const BottomTabs({Key? key}) : super(key: key);
@@ -63,9 +64,7 @@ class _BottomTabsState extends State<BottomTabs> {
             Container(
               color: Colors.green,
             ),
-            Container(
-              color: Colors.red,
-            ),
+            Maps_Screen(),
             ChatBot(),
           ],
         ),
