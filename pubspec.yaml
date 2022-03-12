@@ -40,8 +40,12 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   kommunicate_flutter: ^1.3.1
   google_maps_flutter: ^2.1.2
-  font_awesome_flutter: ^9.2.0
   syncfusion_flutter_datepicker: ^19.4.55
+  flutter_image_slideshow: ^0.1.2
+  fluttertoast: ^8.0.9
+  razorpay_flutter: ^1.2.9
+  font_awesome_flutter: ^9.2.0
+
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +72,11 @@ flutter:
   assets:
     - assets/lottie/paper.json
     - assets/images/beach.jpg
+    - assets/images/beach1.jpg
+    - assets/images/beach2.jpg
+    - assets/images/beach3.jpg
+    - assets/images/beach4.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
