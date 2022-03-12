@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loc/bottom_tabs.dart';
 import 'package:loc/constants/constants.dart';
-import 'voulunteer_screen.dart';
+import 'volunteer_screen.dart';
 import 'fundraiser_screen.dart';
 
 class UserHome extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loc/constants/constants.dart';
 import 'package:loc/roundbutton.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 class MoreVolunteerDetails extends StatefulWidget {
   MoreVolunteerDetails(
@@ -22,16 +22,16 @@ class MoreVolunteerDetails extends StatefulWidget {
 
 class _MoreVolunteerDetailsState extends State<MoreVolunteerDetails> {
   bool click = false;
-    void showToast(String string){
-    Fluttertoast.showToast(
-        msg: "You have been registered.The NGO will contact you shortly",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.TOP,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Color(0xFF0A0E21),
-        textColor: Colors.black,
-        fontSize: 16.0);
-  }
+  //   void showToast(String string){
+  //   Fluttertoast.showToast(
+  //       msg: "You have been registered.The NGO will contact you shortly",
+  //       toastLength: Toast.LENGTH_LONG,
+  //       gravity: ToastGravity.TOP,
+  //       timeInSecForIosWeb: 1,
+  //       backgroundColor: Color(0xFF0A0E21),
+  //       textColor: Colors.black,
+  //       fontSize: 16.0);
+  // }
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -102,7 +102,7 @@ class _MoreVolunteerDetailsState extends State<MoreVolunteerDetails> {
                 text: "Register for this event",
                 onPressed: () {
 
-                  showToast('You have been registered.The NGO will contact you shortly.');
+                  // showToast('You have been registered.The NGO will contact you shortly.');
                 },
               ),
             ),

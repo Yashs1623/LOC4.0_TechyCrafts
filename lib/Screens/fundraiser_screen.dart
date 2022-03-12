@@ -23,11 +23,52 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
     // TODO: implement initState
     _fundRaise = GetFundRaise().getFundRaise();
     razorpay = new Razorpay();
+    razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccess);
+    razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentError);
+    razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWallet);
     super.initState();
     // print(e);
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    razorpay.clear();
+  }
+
+  void openCheckOut(String price, String title, String org_name){
+    var options = {
+      "key":"rzp_test_53topzkI5ia0Ge",
+      "amount": num.parse(price)*100,
+      "name":org_name,
+      "description":title,
+      "prefill":{
+        "contact":"9326549053",
+        "email":"yashs230602@gmail.com"
+      },
+    };
+
+    try{
+      razorpay.open(options);
+    }catch(e){
+      print(e.toString());
+    }
+  }
+
+  void handlePaymentSuccess(){
+    print("Payment success");
+  }
+
+  void handlePaymentError(){
+    print("Payment error");
+  }
+
+  void handleExternalWallet(){
+    print("External Wallet");
+  }
+
+  @override 
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -102,7 +143,7 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
-                              RoundButton(color: kthemecolor, text: "Pay Now", onPressed: (){print('yash');})
+                              RoundButton(color: kthemecolor, text: "Pay Now", onPressed: (){openCheckOut(data[index]['price'].toString(), data[index]['title'].toString(), data[index]['org_name'].toString());})
                             ],
                           ),
                         ),

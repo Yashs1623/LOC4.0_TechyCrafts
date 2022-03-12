@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'voulunteer_screen.dart';
+import 'volunteer_screen.dart';
 import 'fundraiser_screen.dart';
 
 class EventScreen extends StatefulWidget {

@@ -28,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
     var res =
         await http.post(Uri.parse("https://locbackend.herokuapp.com/login"),
             headers: <String, String>{
-              "Accept": "application/json",
               'Content-Type': 'application/json',
             },
             body: jsonEncode({"email": "abhishek@gmail.com", "password": "12345678"}));
