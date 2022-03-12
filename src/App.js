@@ -17,10 +17,7 @@ import User from "./components/User";
 import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
 import Landing from './components/Landing';
-<<<<<<< HEAD
-
-=======
->>>>>>> 46b829bb148674a24034a405ec8ca4d3e5263caa
+import Signup2 from './components/Signup2';
 function App() {
   return (
    
@@ -32,6 +29,7 @@ function App() {
             <Routes>
                 <Route exact path='/' element={<Landing/>}></Route> 
                 <Route exact path='/login' element={< Login />}></Route> 
+                <Route exact path='/signup_user' element={< Signup2 />}></Route> 
                 <Route exact path='/signup' element={< Signup />}></Route> 
                 <Route exact path='/ngo' element={<NGO/>}></Route> 
                 <Route exact path='/user' element={<User/>}></Route>

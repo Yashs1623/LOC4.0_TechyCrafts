@@ -92,14 +92,21 @@ function NavBar(props) {
                 className="btn btn-outline-light mx-1 animate__swing"
                 type="button"
               >
-                Login
+                User Login
+              </Link>
+              <Link
+                to="/signup_user"
+                className="btn btn-outline-light mx-1"
+                type="button"
+              >
+                User Sign-up
               </Link>
               <Link
                 to="/signup"
                 className="btn btn-outline-light mx-1"
                 type="button"
               >
-                Sign-up
+                NGO Sign-up
               </Link>
             </>
           )}
