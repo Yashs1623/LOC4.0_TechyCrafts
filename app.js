@@ -4,11 +4,13 @@ const app = express();
 const bodyParser = require("body-parser")
 const authRoute = require("./routes/authRoutes");
 const dotenv = require("dotenv");
+const cors = require("cors");
 dotenv.config();
 
 const PORT = process.env.PORT || 3000 
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 const connectDB = async () => {
 
     const dbURI = process.env.DATABASE_URL;
