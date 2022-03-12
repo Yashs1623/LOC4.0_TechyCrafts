@@ -45,7 +45,9 @@ module.exports.updateUser = (req, res) => {
 //   console.log(updates);
     const user = auth.user;
   const allowedUpdates = [
+    'name',
     'email',
+    'contact',
     'password',
   ]
   const isValidOperation = updates.every((update) =>
