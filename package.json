@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "@kommunicate/kommunicate-chatbot-plugin": "0.0.5",
     "@mui/material": "^5.5.0",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.24.0",
@@ -12,6 +13,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
+    "google-maps-react": "^2.0.6",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",
     "react-alice-carousel": "^2.5.1",

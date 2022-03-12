@@ -18,6 +18,10 @@ import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
 import Landing from './components/Landing';
 import Signup2 from './components/Signup2';
+<<<<<<< HEAD
+=======
+import Colab from './components/Colab';
+>>>>>>> c9d06f5f9dde78cdaebbe216d45ed52ee6dc0d35
 
 function App() {
   return (
@@ -37,8 +41,13 @@ function App() {
                 <Route exact path='/fundraiser' element={<Fund/>}></Route> 
                 <Route exact path='/event' element={<Event/>}></Route> 
                 <Route exact path='/volunteer' element={<Volunteer/>}></Route>
+<<<<<<< HEAD
                 <Route exact path='/donate' element={<Donate/>}></Route>
                
+=======
+                <Route exact path='/donate' element={<Donate/>}></Route>  
+                <Route exact path='/colab' element={<Colab/>}></Route>  
+>>>>>>> c9d06f5f9dde78cdaebbe216d45ed52ee6dc0d35
             </Routes>
         </div>
         <Footer/>

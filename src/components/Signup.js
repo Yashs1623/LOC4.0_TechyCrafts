@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import signupimg from "../images/signup2.PNG";
 import "animate.css";
@@ -38,7 +38,7 @@ function Signup() {
     };
 
     const response = await fetch(
-      "https://locbackend.herokuapp.com/signup",
+      "https://locbackend.herokuapp.com/ngoSignup",
       requestOptions
     )
       .then((response) => response.text())
