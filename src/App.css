@@ -36,7 +36,8 @@
     transform: rotate(360deg);
   }
 }
-
-
-/* color css */
-/* #e7effd */
+.sliderimg{
+  width: 100%;
+  height: 500px;
+  object-fit: cover
+}
