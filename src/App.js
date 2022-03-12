@@ -12,6 +12,7 @@ import AuthState from './context/AuthCheck/AuthState';
 import NGO from './components/NGO';
 
 
+
 function App() {
   return (
    
@@ -27,6 +28,7 @@ function App() {
                 <Route exact path='/ngo' element={<NGO/> }></Route> 
             </Routes>
         </div>
+       
         </Router>
       </AuthState> 
     </>
