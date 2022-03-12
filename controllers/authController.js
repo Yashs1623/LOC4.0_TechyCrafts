@@ -126,22 +126,16 @@ module.exports.login_post = async (req, res) => {
     }
 }
 
-// module.exports.logout_post = async(req, res) => {
-//     try {
-//         // console.log(req.token);
-//         await req.header('Authorization').replace('Bearer ', '') ==='';
-//         // console.log(token);
-//         // await req.data.save()
+module.exports.ngoSignup = async(req,res)=>{
+  const { org_name, email, address, reg_no, contact, password } = req.body;
+    try {
+        const user = await User.create({ org_name, email, address, reg_no, contact, password });
+        // console.log(user);
+        const token = createToken(user._id);
+        res.status(201).json({ token });
 
-//         res.json({
-//             success: true,
-//             message: 'Logged out successfully',
-//         })
-//     } catch (e) {
-//         console.log(e)
-//         res.status(500).json({
-//             success: false,
-//             message: e.message,
-//         })
-//     }
-// }
+    } catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json(errors);
+    }
+}
