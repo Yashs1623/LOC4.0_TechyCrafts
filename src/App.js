@@ -11,8 +11,10 @@ import NavBar from './components/NavBar';
 import AuthState from './context/AuthCheck/AuthState';
 import NGO from './components/NGO';
 
+
 function App() {
   return (
+   
     <>
       <AuthState>
         <Router>
