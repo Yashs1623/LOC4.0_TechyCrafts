@@ -35,10 +35,12 @@ const Volunteer = () => {
     
 
   return (
+    <>
     <div>
-      <h2 style={{ margin: "auto" }}>Featured Fundraisers</h2>
+      <h2 style={{ margin: "auto" }}>Volunter to make Change</h2>
       {event.map(event => <Cards title={event.event_name} date={event.date} place={event.place} no={event.volunteers_required}  desc={event.desc}/>)}
     </div>
+    </>
   );
 }
 

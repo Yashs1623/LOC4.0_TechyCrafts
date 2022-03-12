@@ -6,6 +6,8 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.0",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.24.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -17,6 +19,8 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-simple-image-slider": "^2.4.0",
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^8.209.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

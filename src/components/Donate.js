@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from "./Cards";
+import Card from "./Cards2";
 import { useState, useEffect } from "react";
 const Donate = () => {
     const [fund, setFund] = useState([]);
@@ -35,12 +35,14 @@ const Donate = () => {
     
 
   return (
-    <div>
+    <>
       <h2 style={{ margin: "auto" }}>Featured Fundraisers</h2>
-      {fund.map(event => <Cards title={fund.title} date={fund.date} desc={fund.desc} org={fund.org_name} price={fund.price}/>)}
+    <div className="container row ">
+      {fund.map(fund => <Card title={fund.title} date={fund.date} desc={fund.desc} org={fund.org_name} price={fund.price}/>)}
      
       
     </div>
+    </>
   );
 };
 

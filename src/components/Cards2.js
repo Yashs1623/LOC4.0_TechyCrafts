@@ -1,9 +1,14 @@
 import React from 'react'
+import {  useNavigate } from 'react-router-dom'
 import image3 from "../images/ngo_img1.jpg"
 
-const Cards2 = (props) => {
+const Card = (props) => {
+  var location=useNavigate();
+  const redirect=()=>{
+    location('/payment')
+  }
   return (
-    
+    <div className='col-6'>
       <div className="card">
           <img src={image3} alt="image3" />
           <div className="card-body">
@@ -12,11 +17,12 @@ const Cards2 = (props) => {
             <p>place:{props.place}</p>
             <p>{props.price}</p>
             <p>{props.org}</p>
-            <button  class="btn btn-primary" type="submit">Donate Now</button>
+            <button  class="btn btn-primary" type="submit" onClick={redirect} >Donate Now</button>
           </div>
+        </div>
         </div>
    
   )
 }
 
-export default Cards2
+export default Card
