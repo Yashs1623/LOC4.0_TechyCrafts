@@ -25,7 +25,7 @@ const ngoSchema = new mongoose.Schema({
     contact:{
         type:String,
         required: [true, "Please enter a Contact Number"],
-    }  
+    },
     password: {
         type: String,
         required: [true, "Please enter a password"],

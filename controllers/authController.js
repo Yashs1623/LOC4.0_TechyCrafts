@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const auth = require('../middleware/auth');
 const dotenv = require("dotenv");
 dotenv.config();
+const Ngo = require("../models/Ngo");
 //error handling
 
 const handleErrors = (err) => {
@@ -78,11 +79,11 @@ module.exports.updateUser = (req, res) => {
 module.exports.getProfile = async(req, res) => {
     try {
       //main
-        // if(auth.user){
-        //     const user = auth.user;
-        //     res.status(200).json(user);
-        // }
-        res.send("yash");
+        if(auth.user){
+            const user = auth.user;
+            res.status(200).json(user);
+        }
+        // res.send("yash");
         // const userId =  auth.user_id;
         // console.log(userId);
         // const user = await User.findOne({_id:userId});
@@ -131,9 +132,9 @@ module.exports.login_post = async (req, res) => {
 module.exports.ngoSignup = async(req,res)=>{
   const { org_name, email, address, reg_no, contact, password } = req.body;
     try {
-        const user = await User.create({ org_name, email, address, reg_no, contact, password });
-        // console.log(user);
-        const token = createToken(user._id);
+        const ngo = await Ngo.create({ org_name, email, address, reg_no, contact, password });
+        // console.log(ngo);
+        const token = createToken(ngo._id);
         res.status(201).json({ token });
 
     } catch (err) {
