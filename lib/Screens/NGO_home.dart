@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:loc/constants/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'fundraiser_form.dart';
+import 'volunteer_form.dart';
 
 class NGO_home extends StatefulWidget {
-  const NGO_home({Key? key}) : super(key: key);
+  NGO_home({required this.name});
+  final String name;
 
   @override
   _NGO_homeState createState() => _NGO_homeState();
@@ -22,12 +24,27 @@ class _NGO_homeState extends State<NGO_home> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Welcome Abhishek',
-            style: TextStyle(fontSize: 24.0, color: Colors.black),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Welcome ${widget.name},',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 24.0, color: Colors.black),
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: 120.0,
+          ),
+          Text(
+            'What do you want to do?',
+            style: TextStyle(fontSize: 20.0, color: Colors.black),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -38,13 +55,17 @@ class _NGO_homeState extends State<NGO_home> {
                       MaterialPageRoute(builder: (context) => Fundform()));
                 },
                 child: Container(
-                  height: 150.0,
-                  width: 150.0,
-                  color: kthemecolor,
+                  decoration: new BoxDecoration(
+                      color: kthemecolor,
+                      borderRadius:
+                          new BorderRadius.all(Radius.circular(30.0))),
+                  height: 175.0,
+                  width: 175.0,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.attach_money,
+                        FontAwesomeIcons.rupeeSign,
                         size: 100.0,
                       ),
                       Text(
@@ -58,12 +79,19 @@ class _NGO_homeState extends State<NGO_home> {
                 width: 20.0,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Volunteerform()));
+                },
                 child: Container(
-                  height: 150.0,
-                  width: 150.0,
-                  color: kthemecolor,
+                  decoration: new BoxDecoration(
+                      color: kthemecolor,
+                      borderRadius:
+                          new BorderRadius.all(Radius.circular(30.0))),
+                  height: 175.0,
+                  width: 175.0,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.event,
@@ -87,8 +115,8 @@ class _NGO_homeState extends State<NGO_home> {
               decoration: new BoxDecoration(
                   color: kthemecolor,
                   borderRadius: new BorderRadius.all(Radius.circular(30.0))),
-              height: 200.0,
-              width: 200.0,
+              height: 175.0,
+              width: 175.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

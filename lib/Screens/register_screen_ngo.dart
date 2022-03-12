@@ -151,7 +151,9 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NGO_home(),
+                      builder: (context) => NGO_home(
+                        name: name,
+                      ),
                     ),
                   );
                 }),
