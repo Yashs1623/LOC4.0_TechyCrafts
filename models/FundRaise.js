@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt"); 
 
-const fundRaise = new mongoose.Schema({
+const fundRaiseSchema = new mongoose.Schema({
     title:{
         type:String,
         required: [true, "Please enter a title"],
@@ -11,20 +11,21 @@ const fundRaise = new mongoose.Schema({
         required: [true, "Please enter an organization name"],
     },
     price:{
-        type:String,
+        type:Number,
         required: [true, "Please enter an address"],
     },
-    reg_no:{
+    desc:{
         type:String,
-        required: [true, "Please enter a Registration Number"],
+        required: [true, "Please enter a desciption"],
     },
-    contact:{
-        type:String,
-        required: [true, "Please enter a Contact Number"],
-    },
-    password: {
-        type: String,
-        required: [true, "Please enter a password"],
-        minlength: [6, "Minimum password length is 6 characters"]
+    date:{
+        type:Date,
+        required:false,
     }
 });
+
+
+const FundRaise = new mongoose.model("fundraise", fundRaiseSchema);
+
+
+module.exports= FundRaise;
