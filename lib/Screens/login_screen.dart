@@ -7,7 +7,7 @@ import 'package:loc/roundbutton.dart';
 import 'package:lottie/lottie.dart';
 import '../constants/constants.dart';
 import 'package:http/http.dart' as http;
-//import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'register_screen_ngo.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,18 +21,20 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  static const SERVER_IP = 'http://localhost:3000';
   Future<TokenModel?> attemptLogIn(String email, String password) async {
     print(email + "  " + password);
-    var res = await http.post(Uri.parse("http://localhost:3000/login"),
-        headers: <String, String>{
-          'Content-Type': 'application/json',
-        },
-        body:
-            jsonEncode(<String, String>{"email": email, "password": password}));
-    // print(res.statusCode);
+    dynamic data = {"email": email, "password": password};
+
+    var res =
+        await http.post(Uri.parse("https://locbackend.herokuapp.com/login"),
+            headers: <String, String>{
+              "Accept": "application/json",
+              'Content-Type': 'application/json',
+            },
+            body: jsonEncode({"email": "abhishek@gmail.com", "password": "12345678"}));
+    print(res.statusCode);
     if (res.statusCode == 201) {
-      // print(jsonDecode(res.body));
+      print(jsonDecode(res.body));
       return TokenModel.fromJson(jsonDecode(res.body));
     } else {
       print(res.reasonPhrase);
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
   }
 
-  //final storage = const FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
   String email = '';
   String password = '';
 
@@ -99,21 +101,22 @@ class _LoginScreenState extends State<LoginScreen> {
             RoundButton(
               text: 'Login',
               color: Colors.lightBlueAccent,
-              onPressed: () {
-                // var email = _emailController.text;
-                // var password = _passwordController.text;
+              onPressed: () async {
+                var email = _emailController.text.toString();
+                var password = _passwordController.text.toString();
 
-                // var token = await attemptLogIn(email, password);
-                // if (token != null) {}
-                // storage.write(key: "token", value: token.token);
-                // String? tokens = await storage.read(key: "token");
-                // print(tokens);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BottomTabs(),
-                  ),
-                );
+                var token = await attemptLogIn(email, password);
+                if (token != null) {
+                  storage.write(key: "token", value: token.token);
+                  String? tokens = await storage.read(key: "token");
+                  print(tokens);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomTabs(),
+                    ),
+                  );
+                }
               },
             ),
             Row(

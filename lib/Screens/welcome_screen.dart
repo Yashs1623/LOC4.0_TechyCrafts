@@ -30,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: [
                 //Lottie.asset('assets/lottie/paper.json', height: 450.0),
                 const Text(
-                  'APPNAME',
+                  'Little Hopes..',
                   style: TextStyle(fontSize: 45.0, color: Colors.black),
                 ),
               ],

@@ -16,6 +16,7 @@ class _EventScreenState extends State<EventScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           bottom: TabBar(
             tabs: [
               Tab(text: 'Volunteers'),
@@ -24,7 +25,7 @@ class _EventScreenState extends State<EventScreen> {
               ),
             ],
           ),
-          title: Text('TABS TITLE TEXT'),
+          title: Text('Upcoming Events'),
         ),
         body: TabBarView(
           children: [VolunteerScreen(), FundraiserScreen()],
