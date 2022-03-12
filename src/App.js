@@ -12,6 +12,7 @@ import AuthState from './context/AuthCheck/AuthState';
 import NGO from './components/NGO';
 import Event from './components/Event';
 import Fund from './components/fundraiser';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Route exact path='/event' element={<Event/> }></Route> 
             </Routes>
         </div>
+        <Footer/>
         </Router>
       </AuthState> 
     </>
