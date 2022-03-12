@@ -15,20 +15,18 @@ function Signup() {
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const response= await fetch(`http://localhost:5000/api/auth/createuser`, {
+        const response= await fetch(`https://locbackend.herokuapp.com/signup`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name:credentials.name, email:credentials.email , password:credentials.password}),
+            body: JSON.stringify({ org_name:credentials.name, email:credentials.email ,address:credentials.add,reg_no:credentials.reg,contact:credentials.contactinfo,password:credentials.password}),
           });
           const json = await response.json();
           
-          if (json.success) {
+          if (json.authToken) {
               //save auth token and redirect
               localStorage.setItem('token',json.authToken);
-
-
               setAuth(true)
               navigate(`/`)
           }
@@ -39,7 +37,8 @@ function Signup() {
 
   return (
     <div className="">
-      <h1 className="d-flex justify-content-center mb-3 "style={{fontFamily:"Bebas Neue",color:"#358297"}} >Sign-Up to Little Hopes</h1>
+      <h1 className="d-flex justify-content-center mb-3 "style={{fontFamily:"Bebas Neue",color:"#358297"}} >Sign-Up to Little Hopes
+      </h1>
       <div className="d-sm-block d-md-flex justify-content-between"> 
       <div className="container">
         <div className=" d-flex justify-content-center ">

@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import User from "./components/User";
 import Volunteer from './components/Volunteer';
 import Donate from './components/Donate';
+import Landing from './components/Landing';
 
 function App() {
   return (
