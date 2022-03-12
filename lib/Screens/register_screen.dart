@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'user_home.dart';
 import 'package:flutter/material.dart';
 import 'package:loc/api_models/login_model.dart';
 import 'package:loc/bottom_tabs.dart';
@@ -10,8 +10,10 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class RegisterationScreenUser extends StatefulWidget {
-  const RegisterationScreenUser({Key? key}) : super(key: key);
-  static const String id = 'Register';
+  RegisterationScreenUser({required this.isNGO, required this.isUser});
+  static const String id = 'RegisterUser';
+  final bool isNGO;
+  final bool isUser;
 
   @override
   State<RegisterationScreenUser> createState() =>
@@ -39,9 +41,11 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
 
   final storage = const FlutterSecureStorage();
 
+  String name = '';
   String email = '';
   String password = '';
   String confirmpass = '';
+  String contactno = '';
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   @override
@@ -58,41 +62,22 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
             SizedBox(
               height: 48.0,
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(color: Colors.black),
-                    onChanged: (value) {
-                      email = value;
-                      //Do something with the user input.
-                    },
-                    decoration: kTextFieldDecoration.copyWith(
-                        hintText: 'Enter first name'),
-                  ),
-                ),
-                Expanded(
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.black),
-                    onChanged: (value) {
-                      password = value;
-                      //Do something with the user input.
-                    },
-                    decoration: kTextFieldDecoration.copyWith(
-                        hintText: 'Enter Last Name'),
-                  ),
-                ),
-              ],
+            TextField(
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black),
+              onChanged: (value) {
+                name = value;
+                //Do something with the user input.
+              },
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Enter full name'),
             ),
             SizedBox(
               height: 8.0,
             ),
             TextField(
               controller: _emailController,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(color: Colors.black),
               decoration:
@@ -107,7 +92,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
             ),
             TextField(
               controller: _passwordController,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               obscureText: true,
               style: TextStyle(color: Colors.black),
               decoration:
@@ -120,7 +105,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
               height: 8.0,
             ),
             TextField(
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               obscureText: true,
               style: TextStyle(color: Colors.black),
               decoration:
@@ -129,26 +114,36 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
                 confirmpass = value;
               },
             ),
+            SizedBox(
+              height: 8.0,
+            ),
+            TextField(
+              keyboardType: TextInputType.phone,
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black),
+              decoration: kTextFieldDecoration.copyWith(hintText: 'Contact no'),
+              onChanged: (value) {
+                contactno = value;
+              },
+            ),
             RoundButton(
-              text: 'Register',
-              color: Colors.lightBlueAccent,
-              onPressed: () async {
-                var email = _emailController.text;
-                var password = _passwordController.text;
-                var token = await attemptSignUp(email, password);
-                if (token != null) {
-                  storage.write(key: "token", value: token.token);
-                  String? tokens = await storage.read(key: "token");
-                  print(tokens);
+                text: 'Register',
+                color: Colors.lightBlueAccent,
+                onPressed: () {
+                  // var email = _emailController.text;
+                  // var password = _passwordController.text;
+                  // var token = await attemptSignUp(email, password);
+                  // if (token != null) {
+                  //   storage.write(key: "token", value: token.token);
+                  //   String? tokens = await storage.read(key: "token");
+                  //   print(tokens);
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BottomTabs(),
+                      builder: (context) => UserHome(),
                     ),
                   );
-                }
-              },
-            ),
+                }),
           ],
         ),
       ),

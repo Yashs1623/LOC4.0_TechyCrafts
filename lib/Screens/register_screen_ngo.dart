@@ -8,7 +8,10 @@ import 'package:loc/api_models/login_model.dart';
 import 'package:loc/bottom_tabs.dart';
 
 class RegisterScreenNGO extends StatefulWidget {
-  const RegisterScreenNGO({Key? key}) : super(key: key);
+  RegisterScreenNGO({required this.isNGO, required this.isUser});
+  static const String id = 'RegisterNGO';
+  final bool isUser;
+  final bool isNGO;
 
   @override
   State<RegisterScreenNGO> createState() => _RegisterScreenNGOState();
@@ -34,54 +37,104 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
   }
 
   final storage = const FlutterSecureStorage();
-
+  String address = '';
+  String name = '';
   String email = '';
   String password = '';
+  String confirmpass = '';
+  String regno = '';
+  String phoneno = '';
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            //Lottie.asset('assets/lottie/paper.json', height: 250.0),
+            TextField(
+              style: TextStyle(color: Colors.black),
+              decoration: kTextFieldDecoration.copyWith(
+                  hintText: 'Enter Organization Name'),
+              textAlign: TextAlign.left,
+              onChanged: (value) {
+                name = value;
+              },
+            ),
             SizedBox(
-              height: 48.0,
+              height: 12.0,
             ),
             TextField(
-              controller: _emailController,
-              textAlign: TextAlign.center,
-              keyboardType: TextInputType.emailAddress,
               style: TextStyle(color: Colors.black),
-              onChanged: (value) {
-                email = value;
-                //Do something with the user input.
-              },
               decoration:
-                  kTextFieldDecoration.copyWith(hintText: 'Enter your Email'),
+                  kTextFieldDecoration.copyWith(hintText: 'Enter Address'),
+              textAlign: TextAlign.left,
+              onChanged: (value) {
+                address = value;
+              },
             ),
             SizedBox(
-              height: 8.0,
+              height: 12.0,
             ),
             TextField(
-              controller: _passwordController,
-              obscureText: true,
-              textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black),
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Registration No'),
+              textAlign: TextAlign.left,
+              keyboardType: TextInputType.number,
               onChanged: (value) {
-                password = value;
-                //Do something with the user input.
+                regno = value;
               },
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            TextField(
+              style: TextStyle(color: Colors.black),
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Enter Email'),
+              textAlign: TextAlign.left,
+              keyboardType: TextInputType.emailAddress,
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            TextField(
+              style: TextStyle(color: Colors.black),
               decoration:
                   kTextFieldDecoration.copyWith(hintText: 'Enter Password'),
+              textAlign: TextAlign.left,
+              obscureText: true,
             ),
             SizedBox(
-              height: 24.0,
+              height: 12.0,
+            ),
+            TextField(
+              textAlign: TextAlign.left,
+              obscureText: true,
+              style: TextStyle(color: Colors.black),
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Confirm Password'),
+              onChanged: (value) {
+                confirmpass = value;
+              },
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            TextField(
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black),
+              keyboardType: TextInputType.phone,
+              decoration:
+                  kTextFieldDecoration.copyWith(hintText: 'Contact info'),
+              onChanged: (value) {
+                phoneno = value;
+              },
             ),
             RoundButton(
               text: 'Register',

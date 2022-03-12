@@ -15,6 +15,7 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   bool isNGO = false;
+  bool isUser = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +42,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               color: Colors.lightBlueAccent,
               text: 'Login as User',
               onPressed: (() {
-                Navigator.pushNamed(context, LoginScreen.id);
+                isNGO = false;
+                isUser = true;
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            LoginScreen(isNGO: isNGO, isUser: isUser)));
               }),
             ),
             RoundButton(
@@ -49,7 +56,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               text: 'Login as NGO',
               onPressed: (() {
                 isNGO = true;
-                Navigator.pushNamed(context, LoginScreen.id);
+                isUser = false;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => LoginScreen(
+                          isNGO: isNGO,
+                          isUser: isUser,
+                        )),
+                  ),
+                );
               }),
             ),
           ],

@@ -7,11 +7,14 @@ import 'package:loc/roundbutton.dart';
 import 'package:lottie/lottie.dart';
 import '../constants/constants.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+//import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'register_screen_ngo.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({required this.isNGO, required this.isUser});
   static const id = 'Login';
+  final bool isNGO;
+  final bool isUser;
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -37,7 +40,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return null;
   }
 
-  final storage = const FlutterSecureStorage();
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  //final storage = const FlutterSecureStorage();
   String email = '';
   String password = '';
 
@@ -91,22 +99,21 @@ class _LoginScreenState extends State<LoginScreen> {
             RoundButton(
               text: 'Login',
               color: Colors.lightBlueAccent,
-              onPressed: () async {
-                var email = _emailController.text;
-                var password = _passwordController.text;
+              onPressed: () {
+                // var email = _emailController.text;
+                // var password = _passwordController.text;
 
-                var token = await attemptLogIn(email, password);
-                if (token != null) {
-                  storage.write(key: "token", value: token.token);
-                  String? tokens = await storage.read(key: "token");
-                  print(tokens);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BottomTabs(),
-                    ),
-                  );
-                }
+                // var token = await attemptLogIn(email, password);
+                // if (token != null) {}
+                // storage.write(key: "token", value: token.token);
+                // String? tokens = await storage.read(key: "token");
+                // print(tokens);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BottomTabs(),
+                  ),
+                );
               },
             ),
             Row(
@@ -122,7 +129,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(color: kthemecolor),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, RegisterationScreenUser.id);
+                    if (widget.isUser)
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterationScreenUser(
+                                  isNGO: widget.isNGO, isUser: widget.isUser)));
+                    else {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterScreenNGO(
+                                    isNGO: widget.isNGO,
+                                    isUser: widget.isUser,
+                                  )));
+                    }
                   },
                 )
               ],

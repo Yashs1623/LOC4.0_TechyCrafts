@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loc/Screens/register_screen_ngo.dart';
 import 'package:loc/bottom_tabs.dart';
 import 'package:loc/Screens/login_screen.dart';
 import 'package:loc/providers/data.dart';
@@ -27,8 +28,6 @@ class LOCApp extends StatelessWidget {
           routes: {
             SplashScreen.id: (context) => SplashScreen(),
             WelcomeScreen.id: (context) => WelcomeScreen(),
-            LoginScreen.id: (context) => LoginScreen(),
-            RegisterationScreenUser.id: (context) => RegisterationScreenUser(),
             BottomTabs.id: (context) => BottomTabs(),
           }),
     );
