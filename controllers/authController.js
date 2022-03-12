@@ -167,9 +167,9 @@ module.exports.fundRaisePost = async (req, res) => {
 
 module.exports.getFundRaise = async(req,res)=>{
   if (auth.user) {
-    var Ngos=[];
-    Ngos = await Ngo.find({});
-    res.status(200).json(Ngos);
+    var fundRaise=[];
+    fundRaise = await FundRaise.find({});
+    res.status(200).json(fundRaise);
   }
 }
 
