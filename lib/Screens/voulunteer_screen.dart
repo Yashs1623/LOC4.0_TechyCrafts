@@ -76,7 +76,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   var data = (snapshot.data as List).toList();
-                  print(data[0]);
+                  print(data);
                   return ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
@@ -102,7 +102,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                               top: 15.0, right: 15.0, left: 15.0),
                           child: Container(
                             color: Color(0xFFF5F6F9),
-                            height: 150,
+                            height: 220,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
