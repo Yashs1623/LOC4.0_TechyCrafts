@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import image3 from "../images/ngo_img1.jpg";
+
 import img1 from "../images/image1.png";
 import img2 from "../images/image2.jpg";
 const Card = (props) => {

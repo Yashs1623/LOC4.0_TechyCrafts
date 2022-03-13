@@ -1,21 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../images/Logo.PNG"
-import AuthContext from "../context/AuthCheck/AuthContext";
+
 
 
 function NavBar(props) {
-  const context2 = useContext(AuthContext);
-  const { auth, setAuth } = context2;
-  setAuth(false);
+
+
   let location = useLocation();
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
 
-
-    setAuth(false);
-  };
   return (
     <>
 
@@ -67,16 +61,7 @@ function NavBar(props) {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-light" type="submit">Search</button>
       </form> */}
-          {auth ? (
-            <Link
-              to="/login"
-              className="btn btn-outline-light mx-1"
-              type="button"
-              onClick={handleLogout}
-            >
-              Logout
-            </Link>
-          ) : (
+          
             <>
               <Link
                 to="/login"
@@ -100,7 +85,7 @@ function NavBar(props) {
                 NGO Sign-up
               </Link>
             </>
-          )}
+          
         </div>
       </div>
     </nav>

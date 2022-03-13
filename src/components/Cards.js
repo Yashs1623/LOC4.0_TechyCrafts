@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import image3 from "../images/ngo_img1.jpg"
 import { ProgressBar } from 'react-bootstrap';
 import img1 from "../images/img1.jpg"
 import img2 from "../images/img2.jpg"
