@@ -58,7 +58,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            //Lottie.asset('assets/lottie/paper.json', height: 250.0),
+            Lottie.asset('assets/lottie/login.json', height: 150.0),
             SizedBox(
               height: 48.0,
             ),
@@ -73,7 +73,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
                   kTextFieldDecoration.copyWith(hintText: 'Enter full name'),
             ),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             TextField(
               controller: _emailController,
@@ -88,7 +88,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
               },
             ),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             TextField(
               controller: _passwordController,
@@ -102,7 +102,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
               },
             ),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             TextField(
               textAlign: TextAlign.left,
@@ -115,7 +115,7 @@ class _RegisterationScreenUserState extends State<RegisterationScreenUser> {
               },
             ),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             TextField(
               keyboardType: TextInputType.phone,

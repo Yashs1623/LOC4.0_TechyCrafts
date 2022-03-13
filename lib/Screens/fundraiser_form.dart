@@ -4,6 +4,7 @@ import 'package:loc/constants/constants.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:loc/roundbutton.dart';
 import 'fundraiser_tiles.dart';
+import 'package:lottie/lottie.dart';
 
 class Fundform extends StatefulWidget {
   const Fundform({Key? key}) : super(key: key);
@@ -37,6 +38,7 @@ class _FundformState extends State<Fundform> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Lottie.asset('assets/lottie/help.json', height: 200.0),
             TextField(
               decoration: kTextFieldDecoration.copyWith(hintText: 'Title'),
               style: TextStyle(color: Colors.black),

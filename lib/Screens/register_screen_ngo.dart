@@ -7,6 +7,7 @@ import 'dart:convert';
 import 'package:loc/api_models/login_model.dart';
 import 'package:loc/bottom_tabs.dart';
 import 'NGO_home.dart';
+import 'package:lottie/lottie.dart';
 
 class RegisterScreenNGO extends StatefulWidget {
   RegisterScreenNGO({required this.isNGO, required this.isUser});
@@ -57,6 +58,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Lottie.asset('assets/lottie/login.json', height: 150.0),
             TextField(
               style: TextStyle(color: Colors.black),
               decoration: kTextFieldDecoration.copyWith(
@@ -67,7 +69,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               },
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               style: TextStyle(color: Colors.black),
@@ -79,7 +81,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               },
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               style: TextStyle(color: Colors.black),
@@ -92,7 +94,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               },
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               style: TextStyle(color: Colors.black),
@@ -102,7 +104,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               style: TextStyle(color: Colors.black),
@@ -112,7 +114,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               obscureText: true,
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               textAlign: TextAlign.left,
@@ -125,7 +127,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
               },
             ),
             SizedBox(
-              height: 12.0,
+              height: 20.0,
             ),
             TextField(
               textAlign: TextAlign.left,

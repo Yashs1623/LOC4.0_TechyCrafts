@@ -63,13 +63,13 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            //Lottie.asset('assets/lottie/paper.json', height: 250.0),
+            Lottie.asset('assets/lottie/login.json', height: 250.0),
             SizedBox(
               height: 48.0,
             ),
             TextField(
               controller: _emailController,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               keyboardType: TextInputType.emailAddress,
               style: TextStyle(color: Colors.black),
               onChanged: (value) {
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               controller: _passwordController,
               obscureText: true,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black),
               onChanged: (value) {
                 password = value;

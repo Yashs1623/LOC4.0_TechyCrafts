@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import '../roundbutton.dart';
 import 'login_screen.dart';
 import 'register_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -13,9 +14,27 @@ class WelcomeScreen extends StatefulWidget {
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation animation;
   bool isNGO = false;
   bool isUser = true;
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
+        .animate(controller);
+    controller.forward();
+    controller.addListener(() {
+      setState(() {});
+      print(animation.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Column(
               children: [
-                //Lottie.asset('assets/lottie/paper.json', height: 450.0),
-                const Text(
-                  'Little Hopes..',
-                  style: TextStyle(fontSize: 45.0, color: Colors.black),
-                ),
+                Image.asset('assets/images/littlehope.jpeg', height: 450.0),
               ],
             ),
             const SizedBox(

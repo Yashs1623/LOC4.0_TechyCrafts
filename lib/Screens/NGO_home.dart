@@ -3,6 +3,7 @@ import 'package:loc/constants/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'fundraiser_form.dart';
 import 'volunteer_form.dart';
+import 'collabration_screen.dart';
 
 class NGO_home extends StatefulWidget {
   NGO_home({required this.name});
@@ -110,7 +111,10 @@ class _NGO_homeState extends State<NGO_home> {
             height: 20.0,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Collaboration()));
+            },
             child: Container(
               decoration: new BoxDecoration(
                   color: kthemecolor,
