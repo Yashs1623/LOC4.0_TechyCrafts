@@ -28,136 +28,147 @@ class _CollaborationState extends State<Collaboration> {
           borderRadius: new BorderRadius.all(Radius.circular(30.0))),
       height: 200,
       width: 125,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Row(
-                children: [
-                  Text(
-                    'Organization name:',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        color: kthemecolor,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Organization name:',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: kthemecolor,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        ' Smile Foundation',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(color: Colors.black, fontSize: 20.0),
+                      )
+                    ],
                   ),
-                  Text(
-                    ' Smile Foundation',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.black, fontSize: 20.0),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 2.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Address:',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: kthemecolor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  ' Mumbai,Maharastra',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Required things:',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: kthemecolor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  ' Clothes',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Things that can be provided:',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: kthemecolor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  ' Volunteers',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2.0,
-            ),
-            Row(
-              children: [
-                Text(
-                  'Contact no:',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: kthemecolor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  ' 9456325871',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
                 SizedBox(
-                  width: 10.0,
+                  height: 2.0,
                 ),
-                TextButton(
-                  onPressed: () {
-                    launch('+919769374806');
-                  },
-                  child: Text(
-                    'Contact NGO',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  style: TextButton.styleFrom(backgroundColor: kthemecolor),
+                Row(
+                  children: [
+                    Text(
+                      'Address:',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: kthemecolor,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' Mumbai,Maharastra',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 2.0,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Required things:',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: kthemecolor,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' Clothes',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 2.0,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Things that can be provided:',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: kthemecolor,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' Volunteers',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 2.0,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Contact no:',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          color: kthemecolor,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' 9456325871',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        launch('+919769374806');
+                      },
+                      child: Text(
+                        'Contact NGO',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: TextButton.styleFrom(backgroundColor: kthemecolor),
+                    )
+                  ],
                 )
               ],
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
+    items.add(TextButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Colab_form()));
+        },
+        child: Text('+ Add a request to collaborate',
+        style: TextStyle(fontSize: 20.0),)));
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
