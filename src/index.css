@@ -63,7 +63,7 @@ i{
 .card {
   background: #fff;
   width: 25em;
-  height: 32em;
+  height: 35em;
   border-radius: 0.6em;
   margin: 1em;
   overflow: hidden;
@@ -179,7 +179,7 @@ h4.product-price {
 }
 #bottom {
   position:absolute;                 
-  margin-top:450px;
+  margin-top:470px;
                      
                          
 }

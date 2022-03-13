@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image3 from "../images/ngo_img1.jpg"
-
+import { ProgressBar } from 'react-bootstrap';
 const Cards = (props) => {
+  const [no,setNo]=useState(20);
+ function HandleEvent(){
+  setNo(no+5);
+  alert("YOU ARE NOW A VOLUNTEER");
+
+  }
   return (
     <div className='col-6'>
       <div className="card">
@@ -13,8 +19,10 @@ const Cards = (props) => {
             <p>{props.date}</p>
             
           </div>
-          <button  class="btn btn-primary" id="bottom" type="submit">Volunteer Now</button>
+          <button  class="btn btn-primary" onClick={HandleEvent} id="bottom" type="submit">Volunteer Now</button>
+          <ProgressBar now={no} />
         </div>
+        
         
         </div>
   )

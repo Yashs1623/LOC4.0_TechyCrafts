@@ -1,9 +1,11 @@
 import React from 'react'
+import Ngo from "../images/ngoCard.PNG"
 
 function Card3(props) {
   return (
     <div className="card">
-          <div className="card-body">
+          <div className="card-body" >
+            <img src={Ngo} alt=""  />
             <h2>{props.orgtitle}</h2>
             <p>{props.req}</p>
             <p>{props.prov}</p>

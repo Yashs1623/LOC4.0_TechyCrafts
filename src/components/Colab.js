@@ -5,26 +5,13 @@ function Colab() {
     const [arrstate,setArr]=useState(
           [
             {
-              address: "wfwfwfwfwf",
-              contact: "wfwfwfwfwfwf",
-              orgName: "wefwfwwfw",
-              prov: "fwfwfwfwfwf",
-              req: "wfwfwfwfwf",
+              address: "Mumbai,Maharastra",
+              contact: "9456325871",
+              orgName: "Smile Foundation",
+              prov: "Volunteers",
+              req: "Clothes",
             },
-            {
-              address: "wahciabkbcaca",
-              contact: "wfwahciabkbcaca",
-              orgName: "ahciabkbcaca",
-              prov: "fwahciabkbcaca",
-              req: "wahciabkbcaca",
-            },
-            {
-              address: "bfuyrbfwufufwfwfwfwfwf",
-              contact: "bfuyrbfwufufwfwfwfwfwfwf",
-              orgName: "bfuyrbfwufufwefwfwwfw",
-              prov: "bfuyrbfwufuffwfwfwfwfwf",
-              req: "bfuyrbfwufufwfwfwfwfwf",
-            },
+            
           ]
 
     )
