@@ -4,6 +4,8 @@ import 'package:loc/constants/constants.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:loc/roundbutton.dart';
 import 'fundraiser_tiles.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Fundform extends StatefulWidget {
   const Fundform({Key? key}) : super(key: key);
@@ -13,14 +15,45 @@ class Fundform extends StatefulWidget {
 }
 
 class _FundformState extends State<Fundform> {
-  DateTime selectedDate = DateTime.now();
-  String date = '';
-  String name = '';
-  String amount = '';
+  // DateTime selectedDate = DateTime.now();
   String title = '';
+  String org_name = '';
+  String price = '';
+  String date = '';
   String desc = '';
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     date = args.toString();
+  }
+
+  Future submitFundRaise(String title, String org_name,
+      String price, String date, String desc) async {
+    // print(email + "  " + password);
+
+    var res = await http.post(
+        Uri.parse("https://locbackend.herokuapp.com/fundRaise"),
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          "title": title,
+          "org_name": org_name,
+          "price": price,
+          "date": date,
+          "desc": desc
+        }));
+    print(res.statusCode);
+    if (res.statusCode == 201) {
+      print(jsonDecode(res.body));
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => FundTiles(title:title, org_name:org_name, price:price, date: date, desc: desc),
+        ),
+      );
+    } else {
+      print(res.reasonPhrase);
+    }
+    return null;
   }
 
   @override
@@ -52,7 +85,7 @@ class _FundformState extends State<Fundform> {
                   hintText: 'Name of Organization'),
               style: TextStyle(color: Colors.black),
               onChanged: (value) {
-                name = value;
+                org_name = value;
               },
             ),
             const SizedBox(
@@ -64,7 +97,7 @@ class _FundformState extends State<Fundform> {
               style: TextStyle(color: Colors.black),
               keyboardType: TextInputType.number,
               onChanged: (value) {
-                amount = value;
+                price = value;
               },
             ),
             const SizedBox(
@@ -96,15 +129,7 @@ class _FundformState extends State<Fundform> {
                 color: kthemecolor,
                 text: 'Submit',
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => FundTiles(
-                              amount: amount,
-                              desc: desc,
-                              title: title,
-                              name: name,
-                              date: date)));
+                 submitFundRaise(title, org_name, price, date, desc);
                 }),
           ],
         ),

@@ -72,6 +72,10 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: kthemecolor,
+        title:Text(' Raise Funds'),
+      ),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -80,8 +84,8 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
               'Please donate to help our cause !',
               style: TextStyle(
                   color: kthemecolor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600),
             ),
           ),
           Center(
@@ -99,52 +103,63 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
                       return Padding(
                         padding: const EdgeInsets.only(
                             top: 15.0, right: 15.0, left: 15.0),
-                        child: Container(
-                          color: Color(0xFFF5F6F9),
-                          height: 200,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 10.0),
-                                child: Text(
-                                  "Title: " +
-                                      data[index]['title'].toString(),
-                                  style: TextStyle(color: Colors.black),
+                        child: Material(
+                          elevation: 10.0,
+                          borderRadius: new BorderRadius.all(
+                                    Radius.circular(30.0)),
+                          child: Container(
+                            decoration: new BoxDecoration(
+                                color: Color(0xFFF5F6F9),
+                                borderRadius: new BorderRadius.all(
+                                    Radius.circular(30.0))),
+                           
+                            height: 200,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  child: Text(
+                                    "Title: " +
+                                        data[index]['title'].toString(),
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 10.0),
-                                child: Text(
-                                  "Organization Name: " + data[index]['org_name'].toString(),
-                                  style: TextStyle(color: Colors.black),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  child: Text(
+                                    "Organization Name: " + data[index]['org_name'].toString(),
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 10.0),
-                                child: Text(
-                                  "Price: " +
-                                      data[index]['price'].toString(),
-                                  style: TextStyle(color: Colors.black),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  child: Text(
+                                    "Price: " +
+                                        data[index]['price'].toString(),
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                              ),
-                              
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, top: 10.0),
-                                child: Text(
-                                  "Date: " +
-                                      data[index]['date']
-                                          .toString()
-                                          .substring(0, 10),
-                                  style: TextStyle(color: Colors.black),
+                                
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  child: Text(
+                                    "Date: " +
+                                        data[index]['date']
+                                            .toString(),
+                                            
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                              ),
-                              RoundButton(color: kthemecolor, text: "Pay Now", onPressed: (){openCheckOut(data[index]['price'].toString(), data[index]['title'].toString(), data[index]['org_name'].toString());})
-                            ],
+                                Padding(padding: EdgeInsets.only(left: 20.0),
+                                child: RoundButton(color: kthemecolor, text: "Pay Now", onPressed: (){openCheckOut(data[index]['price'].toString(), data[index]['title'].toString(), data[index]['org_name'].toString());}),)
+                                
+                              ],
+                            ),
                           ),
                         ),
                       );

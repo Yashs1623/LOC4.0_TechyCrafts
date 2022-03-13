@@ -57,8 +57,12 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: kthemecolor,
+        title: Text('Upcoming Events'),
+      ),
       backgroundColor: Colors.white,
-      body: Column(
+      body: ListView(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 12.0, top: 10),
@@ -66,8 +70,8 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
               'Volunteer in this upcoming events!',
               style: TextStyle(
                   color: kthemecolor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700),
             ),
           ),
           Center(
@@ -99,61 +103,137 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              top: 15.0, right: 15.0, left: 15.0),
-                          child: Container(
-                            color: Color(0xFFF5F6F9),
-                            height: 220,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, top: 10.0),
-                                  child: Text(
-                                    "Event Name: " +
-                                        data[index]['event_name'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                              top: 15.0, right: 15.0, left: 15.0,bottom: 10.0),
+                          child: Material(
+                            elevation: 10.0,
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(30.0)
+                            ),
+                            child: Container(
+                              decoration: new BoxDecoration(
+                                
+                                  color: Color(0xFFF5F6F9),
+                                  borderRadius: new BorderRadius.all(
+                                      Radius.circular(30.0))),
+                                                   
+                              height: 400,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 10.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Event Name: " ,
+                                              
+                                          style: TextStyle(color: kthemecolor,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            data[index]['event_name'].toString(),
+                                            style: TextStyle(color: Colors.black,
+                                            fontSize: 20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, top: 10.0),
-                                  child: Text(
-                                    "Place: " + data[index]['place'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 10.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Place: " ,
+                                              
+                                          style: TextStyle(color: kthemecolor,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            data[index]['place'].toString(),
+                                            style: TextStyle(color: Colors.black,
+                                            fontSize: 20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, top: 10.0),
-                                  child: Text(
-                                    "Description: " +
-                                        data[index]['desc'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 10.0),
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Description: " ,                                           
+                                          style: TextStyle(color: kthemecolor,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            data[index]['desc'].toString(),
+                                            style: TextStyle(color: Colors.black,
+                                            fontSize: 20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, top: 10.0),
-                                  child: Text(
-                                    "Volunteers Required: " +
-                                        data[index]['volunteers_required']
-                                            .toString(),
-                                    style: TextStyle(color: Colors.black),
+                                 Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 10.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Volunteers Required: " ,
+                                              
+                                          style: TextStyle(color: kthemecolor,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            data[index]['volunteers_required'].toString(),
+                                            style: TextStyle(color: Colors.black,
+                                            fontSize: 20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, top: 10.0),
-                                  child: Text(
-                                    "Date: " +
-                                        data[index]['date']
-                                            .toString()
-                                            .substring(0, 10),
-                                    style: TextStyle(color: Colors.black),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, top: 10.0),
+                                    child: Row(
+                                      
+                                      children: [
+                                        Text(
+                                          "Date: " ,
+                                              
+                                          style: TextStyle(color: kthemecolor,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500),
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            data[index]['date'].toString(),
+                                            style: TextStyle(color: Colors.black,
+                                            fontSize: 20),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -171,3 +251,5 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
     );
   }
 }
+
+// The beach clean-up drive is a part of our mission to do our bit for a cleaner country and sustainable environment. Through this initiative, we aim to spread the message to work towards a plastic-free, litter-free and pollution-free environment, a cause we strongly feel about.

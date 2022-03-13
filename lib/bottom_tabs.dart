@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:loc/Screens/fundraiser_screen.dart';
+import 'package:loc/Screens/volunteer_screen.dart';
 import 'constants/constants.dart';
-import 'Screens/events_screen.dart';
 import 'Screens/chatbot.dart';
 import 'Screens/map_screen.dart';
 
@@ -19,19 +20,21 @@ class _BottomTabsState extends State<BottomTabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.white,
         items: [
           BottomNavyBarItem(
-              icon: Icon(
-                Icons.event,
-                color: kthemecolor,
-              ),
-              title: Text('Events')),
+            icon: Icon(
+              Icons.event,
+              color: kthemecolor,
+            ),
+            title: Text('Volunteering'),
+          ),
           BottomNavyBarItem(
               icon: Icon(
                 Icons.query_builder,
                 color: kthemecolor,
               ),
-              title: Text('Query')),
+              title: Text('Fundraising')),
           BottomNavyBarItem(
               icon: Icon(
                 Icons.location_city,
@@ -60,10 +63,8 @@ class _BottomTabsState extends State<BottomTabs> {
             });
           },
           children: [
-            EventScreen(),
-            Container(
-              color: Colors.green,
-            ),
+            VolunteerScreen(),
+            FundraiserScreen(),
             Maps_Screen(),
             ChatBot(),
           ],
