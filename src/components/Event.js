@@ -8,7 +8,8 @@ const Event = () => {
     event_name: "",
     place: "",
     desc: "",
-    volunteers_required: ""
+    volunteers_required: "",
+    date:""
   });
   let navigate = useNavigate();
 
@@ -22,7 +23,8 @@ const Event = () => {
       "event_name": credentials.event_name,
       "place": credentials.place,
       "desc": credentials.desc,
-      "volunteers_required": parseInt(credentials.volunteers_required)
+      "volunteers_required": parseInt(credentials.volunteers_required),
+      "date":credentials.date
     });
     
     var requestOptions = {

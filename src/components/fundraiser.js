@@ -26,7 +26,7 @@ const Fund = () => {
       "org_name": credentials.org_name,
       'price': parseInt(credentials.price),
       "desc":credentials.desc,
-      "date":new Date("2022-13-02T18:30:00.000Z")
+      "date":credentials.date
     });
 
     var requestOptions = {
