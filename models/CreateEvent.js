@@ -19,7 +19,7 @@ const createEventSchema = new mongoose.Schema({
         required: [true, "Please enter a number of volunteers"],
     },
     date:{
-        type:Date,
+        type:String,
         required:false,
     }
 });
