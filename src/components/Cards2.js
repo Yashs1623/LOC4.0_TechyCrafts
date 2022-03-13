@@ -17,8 +17,8 @@ const Card = (props) => {
             <p>place:{props.place}</p>
             <p>{props.price}</p>
             <p>{props.org}</p>
-            <button  class="btn btn-primary" type="submit" onClick={redirect} >Donate Now</button>
           </div>
+          <button  class="btn btn-primary" id="bottom" type="submit" onClick={redirect} >Donate Now</button>
         </div>
         </div>
    
