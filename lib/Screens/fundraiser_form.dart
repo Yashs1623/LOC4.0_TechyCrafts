@@ -66,6 +66,7 @@ class _FundformState extends State<Fundform> {
   Widget build(BuildContext context) {
     var dateValue = TextEditingController();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Fundraiser Info'),

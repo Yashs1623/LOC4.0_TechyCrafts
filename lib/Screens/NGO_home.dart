@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'fundraiser_form.dart';
 import 'volunteer_form.dart';
 import 'collabration_screen.dart';
+import 'package:lottie/lottie.dart';
 
 class NGO_home extends StatefulWidget {
   NGO_home({required this.name});
@@ -25,6 +26,8 @@ class _NGO_homeState extends State<NGO_home> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Lottie.asset('assets/lottie/helpandsupport.json',
+              height: 200, width: 200),
           Row(
             children: [
               Padding(
@@ -32,13 +35,16 @@ class _NGO_homeState extends State<NGO_home> {
                 child: Text(
                   'Welcome ${widget.name},',
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 24.0, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: 24.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 120.0,
+            height: 30.0,
           ),
           Text(
             'What do you want to do?',
@@ -71,6 +77,7 @@ class _NGO_homeState extends State<NGO_home> {
                       ),
                       Text(
                         'Start a Fundraiser',
+                        style: TextStyle(fontSize: 18.0),
                       ),
                     ],
                   ),
@@ -99,7 +106,8 @@ class _NGO_homeState extends State<NGO_home> {
                         size: 100.0,
                       ),
                       Text(
-                        'Upcoming events',
+                        'Organize an Event',
+                        style: TextStyle(fontSize: 18.0),
                       ),
                     ],
                   ),
@@ -132,6 +140,7 @@ class _NGO_homeState extends State<NGO_home> {
                   Text(
                     'Collaborate with other NGOs',
                     textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18.0),
                   ),
                 ],
               ),

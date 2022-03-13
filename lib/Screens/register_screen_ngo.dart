@@ -51,6 +51,7 @@ class _RegisterScreenNGOState extends State<RegisterScreenNGO> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),

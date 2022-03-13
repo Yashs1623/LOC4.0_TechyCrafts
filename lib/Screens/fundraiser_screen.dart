@@ -4,7 +4,6 @@ import 'package:loc/constants/constants.dart';
 import 'package:loc/roundbutton.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-
 class FundraiserScreen extends StatefulWidget {
   const FundraiserScreen({Key? key}) : super(key: key);
 
@@ -37,44 +36,41 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
     razorpay.clear();
   }
 
-  void openCheckOut(String price, String title, String org_name){
+  void openCheckOut(String price, String title, String org_name) {
     var options = {
-      "key":"rzp_test_53topzkI5ia0Ge",
-      "amount": num.parse(price)*100,
-      "name":org_name,
-      "description":title,
-      "prefill":{
-        "contact":"9326549053",
-        "email":"yashs230602@gmail.com"
-      },
+      "key": "rzp_test_53topzkI5ia0Ge",
+      "amount": num.parse(price) * 100,
+      "name": org_name,
+      "description": title,
+      "prefill": {"contact": "9326549053", "email": "yashs230602@gmail.com"},
     };
 
-    try{
+    try {
       razorpay.open(options);
-    }catch(e){
+    } catch (e) {
       print(e.toString());
     }
   }
 
-  void handlePaymentSuccess(){
+  void handlePaymentSuccess() {
     print("Payment success");
   }
 
-  void handlePaymentError(){
+  void handlePaymentError() {
     print("Payment error");
   }
 
-  void handleExternalWallet(){
+  void handleExternalWallet() {
     print("External Wallet");
   }
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: kthemecolor,
-        title:Text(' Raise Funds'),
+        title: Text(' Raise Funds'),
       ),
       body: ListView(
         children: <Widget>[
@@ -105,59 +101,66 @@ class _FundraiserScreenState extends State<FundraiserScreen> {
                             top: 15.0, right: 15.0, left: 15.0),
                         child: Material(
                           elevation: 10.0,
-                          borderRadius: new BorderRadius.all(
-                                    Radius.circular(30.0)),
+                          borderRadius:
+                              new BorderRadius.all(Radius.circular(30.0)),
                           child: Container(
                             decoration: new BoxDecoration(
                                 color: Color(0xFFF5F6F9),
                                 borderRadius: new BorderRadius.all(
                                     Radius.circular(30.0))),
-                           
-                            height: 200,
+                            height: 215,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 20, top: 10.0),
                                   child: Text(
-                                    "Title: " +
-                                        data[index]['title'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                                    "Title: " + data[index]['title'].toString(),
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18.0),
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 20, top: 10.0),
                                   child: Text(
-                                    "Organization Name: " + data[index]['org_name'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                                    "Organization Name: " +
+                                        data[index]['org_name'].toString(),
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18.0),
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 20, top: 10.0),
                                   child: Text(
-                                    "Price: " +
-                                        data[index]['price'].toString(),
-                                    style: TextStyle(color: Colors.black),
+                                    "Price: " + data[index]['price'].toString(),
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18.0),
                                   ),
                                 ),
-                                
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 20, top: 10.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 20, top: 10.0),
                                   child: Text(
-                                    "Date: " +
-                                        data[index]['date']
-                                            .toString(),
-                                            
-                                    style: TextStyle(color: Colors.black),
+                                    "Date: " + data[index]['date'].toString(),
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18.0),
                                   ),
                                 ),
-                                Padding(padding: EdgeInsets.only(left: 20.0),
-                                child: RoundButton(color: kthemecolor, text: "Pay Now", onPressed: (){openCheckOut(data[index]['price'].toString(), data[index]['title'].toString(), data[index]['org_name'].toString());}),)
-                                
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20.0),
+                                  child: RoundButton(
+                                      color: kthemecolor,
+                                      text: "Pay Now",
+                                      onPressed: () {
+                                        openCheckOut(
+                                            data[index]['price'].toString(),
+                                            data[index]['title'].toString(),
+                                            data[index]['org_name'].toString());
+                                      }),
+                                )
                               ],
                             ),
                           ),

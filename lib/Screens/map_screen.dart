@@ -35,7 +35,7 @@ class _Maps_ScreenState extends State<Maps_Screen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Nearest NGOs'),
-        backgroundColor: Colors.green[700],
+        backgroundColor: kthemecolor,
       ),
       body: GoogleMap(
         onMapCreated: _onMapCreated,

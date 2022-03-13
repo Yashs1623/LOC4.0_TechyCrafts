@@ -19,6 +19,7 @@ class _VolunteerformState extends State<Volunteerform> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Volunteer Form'),
