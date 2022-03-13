@@ -36,8 +36,8 @@ const Volunteer = () => {
 
   return (
     <>
-    <div>
-      <h2 style={{ margin: "auto" }}>Volunter to make Change</h2>
+    <h2 style={{ margin: "auto" }}>Volunter to make Change</h2>
+    <div className="container row ">
       {event.map(event => <Cards title={event.event_name} date={event.date} place={event.place} no={event.volunteers_required}  desc={event.desc}/>)}
     </div>
     </>

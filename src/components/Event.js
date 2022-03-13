@@ -1,7 +1,50 @@
-import React from "react";
+
 import imglink from "../images/Event.jpg"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Event = () => {
+  const [credentials, setCredentials] = useState({
+    event_name: "",
+    place: "",
+    desc: "",
+    volunteers_required: "",
+    date:""
+  });
+  let navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmM5ZWFmZDZkMWQwYmM4ZDdkOWUxMiIsImlhdCI6MTY0NzA5MTM3NSwiZXhwIjoxNjc4NjI3Mzc1fQ.10XgYHrTjNWE_jjxGXgLfrUSbKUGrcY1WCIh0ZQCnKg");
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "event_name": credentials.event_name,
+      "place": credentials.place,
+      "desc": credentials.desc,
+      "volunteers_required": parseInt(credentials.volunteers_required),
+      "date":credentials.date
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("https://locbackend.herokuapp.com/createEvent", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+    navigate(`/volunteer`);
+  };
+
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
+
    
 return (
 <div className="">
@@ -14,39 +57,35 @@ return (
         </div>
       </div>
       <div className="w-75 d-md-inline-block">     
-      <form  style={{fontFamily:"Bebas Neue",color:"#358297", fontSize:'20px'}} >
+      <form  style={{fontFamily:"Bebas Neue",color:"#358297", fontSize:'20px' }} action="/action_page.php"
+            method="post"
+            onSubmit={handleSubmit} >
         <div className="form-floating mb-3">
           <input
             type="text"
             className="form-control"
             id="name"
-            name="name"
+            name="event_name"
             minLength={2} required
             style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
+            onChange={onChange}
+                value={credentials.event_name}
           />
-          <label htmlFor="name">Event raiser title</label>
+          <label htmlFor="name">Event title</label>
         </div>
         
-        <div className="form-floating mb-3">
-          <input
-            type="text"
-            className="form-control"
-            id="email"
-            name="email"
-           
-            style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
-          />
-          <label htmlFor="email">Name</label>
-        </div>
+        
 
         <div className="form-floating mb-3">
           <input
             type="text"
             className="form-control"
             id="email"
-            name="email"
+            name="place"
            
             style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
+            onChange={onChange}
+                value={credentials.place}
           />
           <label htmlFor="email">Place</label>
         </div>
@@ -55,9 +94,11 @@ return (
             type="text"
             className="form-control"
             id="email"
-            name="email"
+            name="desc"
            
             style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
+            onChange={onChange}
+                value={credentials.desc}
           />
           <label htmlFor="email">Motive</label>
         </div>
@@ -66,9 +107,11 @@ return (
             type="number"
             className="form-control"
             id="add"
-            name="add"
+            name="volunteers_required"
            
             style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
+            onChange={onChange}
+                value={credentials.volunteers_required}
           />
           <label htmlFor="add">No of Volunter required</label>
         </div>
@@ -77,8 +120,10 @@ return (
             type="date"
             className="form-control"
             id="reg"
-            name="reg"
+            name="date"
             style={{fontFamily:"system-ui",color:"rgb(10 76 94)",fontSize:'17px'}}
+            onChange={onChange}
+            value={credentials.date}
           />
           <label htmlFor="reg">Date</label>
         </div>
