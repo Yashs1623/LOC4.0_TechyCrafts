@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             headers: <String, String>{
               'Content-Type': 'application/json',
             },
-            body: jsonEncode({"email": email, "password": password}));
+            body: jsonEncode({"email": "abhishek@gmail.com", "password": "12345678"}));
     print(res.statusCode);
     if (res.statusCode == 201) {
       print(jsonDecode(res.body));
