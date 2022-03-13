@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import Cards from "./Cards";
+
 const Volunteer = () => {
     const [event, setEvent] = useState([]);
     useEffect(() => {
@@ -38,7 +39,7 @@ const Volunteer = () => {
     <>
     <h2 style={{ margin: "auto" }}>Volunter to make Change</h2>
     <div className="container row ">
-      {event.map(event => <Cards title={event.event_name} date={event.date} place={event.place} no={event.volunteers_required}  desc={event.desc}/>)}
+      {event.map((event,index) => <Cards title={event.event_name} date={event.date} place={event.place} no={event.volunteers_required}  desc={event.desc} index={index}/>)}
     </div>
     </>
   );

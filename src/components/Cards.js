@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import image3 from "../images/ngo_img1.jpg"
 import { ProgressBar } from 'react-bootstrap';
+import img1 from "../images/img1.jpg"
+import img2 from "../images/img2.jpg"
+import img3 from "../images/img3.jpg"
 const Cards = (props) => {
+  const image=[img1,img2,img3];
   const [no,setNo]=useState(20);
  function HandleEvent(){
   setNo(no+5);
@@ -11,7 +15,7 @@ const Cards = (props) => {
   return (
     <div className='col-6'>
       <div className="card">
-          <img src={image3} alt="image3" />
+          <img src={image[props.index]} alt="image3" />
           <div className="card-body">
             <h2>{props.title}</h2>
             <p>{props.desc}</p>
