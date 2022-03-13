@@ -6,7 +6,7 @@ function Footer() {
   <footer className="d-flex flex-wrap justify-content-center align-items-center border-top">
     <div className="col-md-4 d-flex align-items-center justify-content-center">
     
-      <span className="text-muted">&copy; 2021 Company, Inc</span>
+      <span className="text-muted">&copy; 2022 Company, Inc</span>
     </div>
   </footer>
 </div>

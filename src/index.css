@@ -17,13 +17,13 @@ code {
 /* Button */
 .btn-primary-c{
   color: #fff;
-  background-color: #358297;
-  border-color: #358297;
+  background-color: rgb(9, 80, 213);
+  border-color: rgb(9, 80, 213);
 }
 .btn-primary-c:hover{
   color: rgb(233, 224, 224);
-  background-color: #286677;
-  border-color: #286677;
+  background-color: rgb(19 72 171);
+  border-color: rgb(19 72 171);
 }
 
 /* Background COLOR*/

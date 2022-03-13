@@ -1,13 +1,10 @@
-import React, { useState,useContext, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import signupimg from "../images/signup2.PNG";
 import "animate.css";
-import AuthContext from "../context/AuthCheck/AuthContext";
 
 function Signup2() {
-  const context2=useContext(AuthContext);
-  const {auth,setAuth}=context2;
-  setAuth(null);
+
   const [animation, setAnimation] = useState(true);
   const [credentials, setCredentials] = useState({
     name: "",
@@ -41,7 +38,7 @@ function Signup2() {
       .then((response) => response.text())
       .then((result) => {
         localStorage.setItem("token", result.token);
-        navigate(`/ngo`);
+        navigate(`/user`);
       })
       .catch((error) => console.log("error", error));
     //save auth token and redirect

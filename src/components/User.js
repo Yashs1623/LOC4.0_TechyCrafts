@@ -1,5 +1,5 @@
 import React from 'react'
-import ngoimg from '../images/ngo_img2.jpg'
+import ngoimg from '../images/ngo_img5.jpg'
 import { useNavigate } from 'react-router-dom';
 import Slider from './Slider';
 
@@ -11,6 +11,9 @@ function User() {
     }
     const renderEvent=()=>{
         navigate(`/donate`)
+    }
+    const renderCollab=()=>{
+        navigate(`/colab`)
     }
 
   return (
@@ -32,22 +35,31 @@ Education empowers an individual to earn their livelihood and also increases one
   </div>
   <h1 className="container row justify-content-center">Participate in Event</h1>
   <div className="container row justify-content-between">
-    <div className="col-md-5">
+    <div className="col-md-4">
         <div className="h-100 p-5  border rounded-3">
         <div className="d-flex justify-content-center"> <i className="fa-solid fa-handshake-angle fa-2xl"></i></div>
         
-          <h2  className="mt-3 d-flex justify-content-center">Donate for cause</h2>
-          <p>“Service to others is the rent you pay for your room here on earth.”</p>
+          <h2  className="mt-3 d-flex justify-content-center">Donate</h2>
+          <p>Donate for a noble Cause</p>
           <button className="btn btn-outline-secondary container" type="button" onClick={renderEvent}>Donate</button>
         </div>
       </div>
-      <div className="col-md-5">
+      <div className="col-md-4">
         <div className="h-100 p-5 bg border rounded-3">
         <div className="d-flex justify-content-center"><i className="fa-solid fa-calendar-days fa-2xl"></i></div>
         
-          <h2 className="mt-3 d-flex justify-content-center">Volunter for event</h2>
-          <p>“Volunteering is at the very core of being a human.  No one has made it through life without someone else’s help.” </p>
+          <h2 className="mt-3 d-flex justify-content-center">Volunter</h2>
+          <p>Volunter for Upcoming Event </p>
           <button className="btn btn-outline-secondary container " type="button" onClick={renderVolunteer} >Volunter</button>
+        </div>
+      </div>      
+      <div className="col-md-4">
+        <div className="h-100 p-5 bg border rounded-3">
+        <div className="d-flex justify-content-center"><i className="fa-solid fa-user-group fa-2xl"></i></div>
+        
+          <h2 className="mt-3 d-flex justify-content-center">Collaborate</h2>
+          <p>Collaborate with other NGOs </p>
+          <button className="btn btn-outline-secondary container " type="button" onClick={renderCollab} >Collaborate</button>
         </div>
       </div>      
 

@@ -8,12 +8,12 @@ import image3 from "../images/ngo_img4.jpg"
 function Slider(){
     return(
         <div className="App">
-        <AliceCarousel autoPlay autoPlayInterval="3000">
+        <AliceCarousel autoPlay autoPlayInterval="3000" infinite="true" >
       <img src={image1} alt="image1" className="sliderimg"/>
       <img src={image2} alt="image2"className="sliderimg"/>
       <img src={image3} alt="image3" className="sliderimg"/>
       
-</AliceCarousel>
+        </AliceCarousel>
         </div>
     );
 }
