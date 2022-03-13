@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   kTextFieldDecoration.copyWith(hintText: 'Enter your Email'),
             ),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             TextField(
               controller: _passwordController,

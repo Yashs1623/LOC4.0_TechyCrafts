@@ -19,6 +19,7 @@ class _BottomTabsState extends State<BottomTabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavyBar(
+        //backgroundColor: ,
         items: [
           BottomNavyBarItem(
               icon: Icon(

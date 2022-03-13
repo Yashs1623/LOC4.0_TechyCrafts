@@ -58,7 +58,12 @@ class _Maps_ScreenState extends State<Maps_Screen> {
               position: LatLng(19.158851, 72.676718)),
           const Marker(
               markerId: MarkerId('Hello'),
-              position: LatLng(19.102512, 72.845367))
+              position: LatLng(19.102512, 72.845367)),
+          const Marker(
+              markerId: MarkerId('Hi'), position: LatLng(19.136326, 72.827660)),
+          const Marker(
+              markerId: MarkerId('Ola'),
+              position: LatLng(19.217907, 72.847084)),
         },
       ),
     );

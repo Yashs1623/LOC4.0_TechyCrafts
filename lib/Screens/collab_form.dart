@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loc/constants/constants.dart';
 import 'package:loc/roundbutton.dart';
 import 'collabration_screen.dart';
+import 'package:lottie/lottie.dart';
 
 class Colab_form extends StatefulWidget {
   const Colab_form({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class _Colab_formState extends State<Colab_form> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Lottie.asset('assets/lottie/helpandsupport.json', height: 150),
             TextField(
               decoration:
                   kTextFieldDecoration.copyWith(hintText: 'Company Name'),

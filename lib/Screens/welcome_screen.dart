@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loc/constants/constants.dart';
-import 'package:lottie/lottie.dart';
 import '../roundbutton.dart';
 import 'login_screen.dart';
-import 'register_screen.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
